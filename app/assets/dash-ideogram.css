@@ -1,0 +1,41 @@
+#main-body {
+    background-color: #FDFCFF !important;
+    color: #303030 !important;
+}
+#main-body ::-webkit-scrollbar {
+    background-color: #FDFCFF !important;
+}
+#main-body ::-webkit-scrollbar-thumb {
+    background-color: #230047 !important;
+}
+
+#main-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+#main-fig {
+    display: inline-block;
+    width: calc(100vw - 600px);
+    min-width:400px;
+    height: 650px;
+    overflow: auto;
+    margin-left: 50px;
+    margin-top: 50px;
+    padding-right: 20px;
+}
+
+#main-body hr {
+    width: 100%;
+}
+
+#main-body h4 {
+    margin-bottom: 25px;
+}
+
+#main-body .control-tabs .tab--selected {
+    color: #506784 !important;
+}
+
+#main-body h3 {
+    text-align: center;
+}

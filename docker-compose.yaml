@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: ./
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "8050:8050"
