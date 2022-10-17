@@ -69,20 +69,32 @@ file in the root folder of the project.
 Install all requirements:
 
 ```bash
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Create `.env` file defining the environment variable `DATA_PATH` to point
 to the location of the data files, e.g.:
 
 ```bash
-$ echo DATA_PATH=files > .env
+echo DATA_PATH=files > .env
 ```
 
 Launch the app like this:
 
 ```bash
-$ python -m app.main
+python -m app.main
 ```
 
 The app can be accessed at http://localhost:8050.
+
+### Known issues
+
+If you faced a problem regarding the host name, you may explicitly define the address in the last statement of the `app/main.py` file. For example, you can change it from:
+```python
+app.run_server(debug=True, port=settings.get('SERVER_PORT'))
+```
+to:
+```python
+app.run_server(host='127.0.0.1', debug=True, port=settings.get('SERVER_PORT'))
+```
+in order to access the app at http://127.0.0.1:8050
