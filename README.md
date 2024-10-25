@@ -4,7 +4,7 @@
 
 This repository contains the source code of the Skeletal Cell Atlas App, written in Python using the [Dash framework](https://plotly.com/dash/). The app is currently running at [skeletalcellatlas.org](https://skeletalcellatlas.org/).
 
-You can grab your own copy of the dataset from the address above (as a loom file), put it in the `data` directory, and follow one of the following approaches (run with or without Docker) to install and run a local version of the app on your machine.
+You can grab your own copy of the dataset from the address above (as an h5 file), put it in the `data` directory, and follow one of the following approaches (run with or without Docker) to install and run a local version of the app on your machine.
 
 For more information on the dataset and the app, please refer to [this preprint](https://www.biorxiv.org/content/10.1101/2022.03.14.484345v1).
 
