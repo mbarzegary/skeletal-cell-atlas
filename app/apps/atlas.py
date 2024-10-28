@@ -30,7 +30,7 @@ available_devtps = df['devtp'].unique()
 available_studies = df['study'].unique()
 available_types = df['identity'].unique()
 
-app_title = "Skeletal Cell Atlas"
+app_title = "Limb Skeletal Cell Atlas"
 header_bg_color = "#506784"
 header_font_color = "#F3F6FA"
 
@@ -38,7 +38,7 @@ option_block = [
         html.H3('Filters'),
 
         html.Div(className='app-controls-block', children=[
-            html.Div(className='app-controls-name', children='Cell type'),
+            html.Div(className='app-controls-name', children='Cell Type'),
             dcc.Dropdown(
                 id='type-column',
                 options=[{'label': i, 'value': i} for i in available_types],
@@ -78,7 +78,7 @@ option_block = [
         # ]),
 
         html.Div(className='app-controls-block', children=[
-            html.Div(className='app-controls-name', children='Developmental time point'),
+            html.Div(className='app-controls-name', children='Developmental Time Point'),
             dcc.Dropdown(
                 id='devtp-column',
                 options=[{'label': i, 'value': i} for i in available_devtps],
@@ -101,7 +101,7 @@ option_block = [
 
         html.H3('Gene Expressions'),
         html.Div(className='app-controls-block', children=[
-            html.Div(className='app-controls-name', children='Gene of interest'),
+            html.Div(className='app-controls-name', children='Gene of Interest'),
             dcc.Dropdown(
                 id='gene-expr',
                 options=[{'label': i, 'value': i} for i in df_genes['genes'].unique()]
@@ -123,7 +123,7 @@ option_block = [
         #     )
         # ]),
         html.Div(className='app-controls-block', children=[
-            html.Div(className='app-controls-name', children='Cell size'),
+            html.Div(className='app-controls-name', children='Cell Size'),
             dcc.Slider(
                 id='cell-size-input',
                 value=2,
@@ -144,8 +144,9 @@ option_block = [
                     dcc.Download(id="download-dataframe-csv"),
                     # html.A(html.Button('Download database as Loom file', className='control-download'),
                     #     href='/downloadloom', target="_blank"),
-                    html.A(html.Button('Download database as H5 file', className='control-download'),
-                        href='https://kuleuven-my.sharepoint.com/personal/liesbeth_ory_kuleuven_be/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fliesbeth%5Fory%5Fkuleuven%5Fbe%2FDocuments%2FAtlas%5Fv3%5F5%2Eh5ad&parent=%2Fpersonal%2Fliesbeth%5Fory%5Fkuleuven%5Fbe%2FDocuments&ga=1&LOF=1', target="_blank"),
+                    html.A(html.Button('Download database as h5ad file', className='control-download'),
+                        href='/download/Atlas_v3_5.h5ad', target="_blank"),
+
                 ]
             )
         ])
@@ -165,8 +166,8 @@ page_layout = html.Div(id='main-body', className='app-body', children=[
                     label='About',
                     value='what-is',
                     children=html.Div(className='control-tab', children=[
-                        html.H4(className='what-is', children='What is Skeletal Cell Atlas?'),
-                        html.P('The Skeletal Cell Atlas is an initiative to integrate publicly available single-cell RNA-seq datasets from skeletal and limb developmental studies. The atlas is an interactive web-based resource to facilitate accessibility of genomics data. Users can interactively identify cell types expressing genes of interest or discover transcriptomic subpopulations within a cell type.'),
+                        html.H4(className='what-is', children='What is the Limb Skeletal Cell Atlas?'),
+                        html.P('The Limb Skeletal Cell Atlas is an initiative to integrate publicly available single-cell RNA-seq datasets from skeletal and limb developmental studies. The atlas is an interactive web-based resource to facilitate accessibility of genomics data. Users can interactively identify cell types expressing genes of interest or discover transcriptomic subpopulations within a cell type.'),
                         html.P('In the "Options" tab, you can filter the atlas based on the available metadata or plot your gene of interest.'),
                         html.P('Interested in contributing to the atlas?'),
 						html.A("Contact us!", href='mailto:liesbet.geris@kuleuven.be', target="_blank")
